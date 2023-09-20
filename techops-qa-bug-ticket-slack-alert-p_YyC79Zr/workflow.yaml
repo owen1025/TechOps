@@ -1,6 +1,5 @@
 schema: workflow/2022.04
 name: "[TechOps] QA 확인 요청"
-inactive: true
 settings:
   error_notification: true
 triggers:
