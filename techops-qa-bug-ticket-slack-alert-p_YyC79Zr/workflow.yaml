@@ -17,5 +17,5 @@ steps:
     as_user: true
     conversation: "{{steps.node.$return_value}}"
     text: ":point_right: <https://carpenstreet.atlassian.net/browse/{{steps.trigger.event.body.issue.key}}|Ready
-      for QA> 로 상태가 변경되었습니다. <@S057FTKA08J> 확인 부탁드려요 :meowparty:"
+      for QA> 로 상태가 변경되었습니다. <!subteam^S057FTKA08J> 확인 부탁드려요 :meowparty:"
 
