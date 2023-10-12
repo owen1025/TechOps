@@ -1,0 +1,16 @@
+schema: workflow/2022.04
+name: 상품 상세 페이지 자동 캐시 삭제
+settings:
+  error_notification: true
+  lambda_timeout: 60
+triggers:
+- id: ti_m1Twozl
+steps:
+- namespace: cloudflare_api_key_purge_all_files
+  runtime: nodejs18.x
+  uses: cloudflare_api_key-purge-all-files@0.2.2
+  props:
+    cloudflare_api_key:
+      authProvisionId: apn_eah5jnl
+    zone_id: 169095a6a9ba26d1580d3973cb9e534a
+

@@ -1,0 +1,26 @@
+schema: workflow/2022.04
+name: Purge cache cron
+settings:
+  error_notification: true
+  lambda_timeout: 60
+triggers:
+- id: ti_KbTM2GX
+steps:
+- namespace: cloudflare_api_key
+  runtime: nodejs18.x
+  uses: "./cloudflare_api_key/entry.js"
+  props:
+    cloudflare_api_key:
+      authProvisionId: apn_eah5jnl
+- namespace: send_message_public_channel
+  runtime: nodejs18.x
+  uses: slack-send-message-public-channel@0.2.17
+  props:
+    slack:
+      authProvisionId: apn_wGhl41x
+    conversation:
+      __lv:
+        label: 2_pf_프로덕트팀_배포
+        value: C04BDGKLQVA
+    text: ":point_right: 상품 상세 페이지 캐시 일괄 삭제 완료되었습니다~!"
+
