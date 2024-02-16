@@ -1,0 +1,14 @@
+schema: workflow/2022.04
+name: 카펜스트리트 구성원 일정 가져오기
+settings:
+  error_notification: true
+triggers:
+- id: sub_JDUZzxg
+steps:
+- namespace: google_calendar
+  runtime: nodejs18.x
+  uses: "./google_calendar/entry.js"
+  props:
+    google_calendar:
+      authProvisionId: apn_dbh1gD3
+
